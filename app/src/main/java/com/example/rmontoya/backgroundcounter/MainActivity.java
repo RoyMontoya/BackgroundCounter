@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.rmontoya.backgroundcounter.handler.CounterRunnable;
+import com.example.rmontoya.backgroundcounter.runnable.CounterRunnable;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Handler handler;
     private Thread thread;
     private CounterRunnable counterRunnable;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +42,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         };
     }
 
-
     private void setOnClickListeners() {
         startButton.setOnClickListener(this);
         restartButton.setOnClickListener(this);
@@ -57,6 +55,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         stopButton = (Button) findViewById(R.id.stop_button);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        stopThread();
+    }
 
     @Override
     public void onClick(View view) {
@@ -94,7 +97,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             thread.interrupt();
             thread = null;
         }
-
     }
 
 }
