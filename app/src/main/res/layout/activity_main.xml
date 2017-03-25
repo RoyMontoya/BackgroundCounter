@@ -4,12 +4,29 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/counter_text"
+        android:text="@string/counter_header"
+        android:layout_marginTop="@dimen/standard_element_margin"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/header_counter_size"
+        android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="0"
-        android:textSize="48sp" />
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/counter_text"
+        style="@style/counter_number_text_style"
+        android:text="@string/zero" />
+
+    <TextView
+        android:id="@+id/time_running_text"
+        android:text="@string/timer_is_running"
+        android:textSize="@dimen/time_is_running_text_size"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_below="@id/counter_text"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <include
         layout="@layout/buttons_layout"

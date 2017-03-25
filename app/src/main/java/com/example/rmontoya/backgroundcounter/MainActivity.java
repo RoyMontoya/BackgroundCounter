@@ -16,8 +16,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button startButton;
     private Button restartButton;
     private Button stopButton;
-    private int counterValue = 0;
     private TextView counterResultText;
+    private TextView timeIsRunningText;
+    private int counterValue = 0;
     private Handler handler;
     private Thread thread;
     private CounterRunnable counterRunnable;
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startButton = (Button) findViewById(R.id.start_button);
         restartButton = (Button) findViewById(R.id.restart_button);
         stopButton = (Button) findViewById(R.id.stop_button);
+        timeIsRunningText = (TextView) findViewById(R.id.time_running_text);
     }
 
     @Override
@@ -83,6 +85,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void disableButtons(boolean isRunning) {
         startButton.setEnabled(!isRunning);
         stopButton.setEnabled(isRunning);
+        showRunningText(isRunning);
+    }
+
+    private void showRunningText(boolean isRunning) {
+        if (isRunning) {
+            timeIsRunningText.setVisibility(View.VISIBLE);
+        } else {
+            timeIsRunningText.setVisibility(View.GONE);
+        }
+
     }
 
     private void startNewThread() {

@@ -3,4 +3,7 @@
     <string name="start">Start</string>
     <string name="restart">Restart</string>
     <string name="stop">Stop</string>
+    <string name="zero">0</string>
+    <string name="counter_header">Second Counter</string>
+    <string name="timer_is_running">The time is running!</string>
 </resources>

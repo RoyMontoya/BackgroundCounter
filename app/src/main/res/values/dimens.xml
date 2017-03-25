@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="standard_element_margin">16sp</dimen>
+    <dimen name="counter_text_size">64sp</dimen>
+    <dimen name="time_is_running_text_size">24sp</dimen>
+    <dimen name="header_counter_size">48sp</dimen>
 </resources>
