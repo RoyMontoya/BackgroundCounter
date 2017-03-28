@@ -4,8 +4,8 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text="@string/counter_header"
-        style="@style/header_text_style" />
+        style="@style/header_text_style"
+        android:text="@string/counter_header" />
 
     <TextView
         android:id="@+id/counter_text"
@@ -14,11 +14,10 @@
 
     <TextView
         android:id="@+id/time_running_text"
-        android:text="@string/timer_is_running"
         style="@style/time_is_running_text_style"
         android:layout_below="@id/counter_text"
-        android:visibility="gone"
-        />
+        android:text="@string/timer_is_running"
+        android:visibility="gone" />
 
     <include
         layout="@layout/buttons_layout"

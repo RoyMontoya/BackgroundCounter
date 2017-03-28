@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private int counterValue = 0;
     private Handler handler;
     private Thread thread;
-    private CounterRunnable counterRunnable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +29,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setViews();
         setOnClickListeners();
         createHandler();
-
     }
 
     private void createHandler() {
@@ -98,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void startNewThread() {
-        counterRunnable = new CounterRunnable(handler, counterValue);
+        CounterRunnable counterRunnable = new CounterRunnable(handler, counterValue);
         thread = new Thread(counterRunnable);
         thread.start();
         disableButtons(true);
